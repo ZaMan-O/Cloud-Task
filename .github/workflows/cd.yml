@@ -27,6 +27,9 @@ jobs:
         run: echo "${{ secrets.PROD_YML }}" > ./src/main/resources/application-prod.yml
         shell: bash
 
+      - name: Grant execute permission for gradlew
+        run: chmod +x gradlew
+
       - name: Build with Gradle
         run: ./gradlew clean build
 
