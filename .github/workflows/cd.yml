@@ -50,7 +50,7 @@ jobs:
       - name: Code Deploy
         run: |
           aws deploy create-deployment \
-            --application-name cloud-task-prod-codedeploy \
+            --application-name week-4-task-codedeploy \
             --deployment-config-name CodeDeployDefault.AllAtOnce \
-            --deployment-group-name api-prod-cloud-task \
+            --deployment-group-name dev \
             --s3-location bucket=${{ secrets.BUCKET_NAME }},bundleType=zip,key=prod/$GITHUB_SHA.zip
